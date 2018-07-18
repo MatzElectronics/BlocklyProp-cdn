@@ -1,0 +1,156 @@
+<html><link href="help-style.css" rel="stylesheet" type="text/css" /><body><div class="field-item even" property="content:encoded"><h2>BlocklyProp reference for <strong>NUMBERS blocks</strong></h2>
+
+<p><img alt="" src="help-images/IconActivityBoard.png" style="float:left; height:17px; margin-left:10px; margin-right:10px; width:19px"><img alt="" src="help-images/IconFlip.png" style="float:left; height:17px; margin-left:10px; margin-right:10px; width:19px"><img alt="" src="help-images/IconBadge.png" style="float:left; height:17px; margin-left:10px; margin-right:10px; width:19px"><img alt="" src="help-images/IconQ44.png" style="height:17px; margin-left:10px; margin-right:10px; width:19px">Compatible with all Propeller board types (except Scribbler Robot).&nbsp;</p>
+
+<p>The <strong>NUMBER </strong>operator blocks can accept <strong>number value </strong>blocks, and any other operation blocks or sensor blocks that provide a numerical value.</p>
+
+<hr>
+<h2>math operation</h2>
+
+<p><img alt="" src="help-images/_math_mutator.png" style="height:36px; width:144px"></p>
+
+<p>The <strong>math operation </strong>block performs a mathematical operation on the inserted value blocks. Non-integer (fraction or decimal) results will be truncated to an integer. Choose an operation from the dropdown menu:</p>
+
+<ul>
+	<li>+ addition</li>
+	<li>- subtraction</li>
+	<li>× multiplication</li>
+	<li>÷ division</li>
+	<li>% modulus (remainder after division)</li>
+	<li>^ (raise to the power of)</li>
+</ul>
+
+<p><img alt="" src="help-images/math_three-term.png" style="height:210px; width:237px"></p>
+
+<p>The math operation block has two terms by default. Click the gear and drag over additional terms as needed.&nbsp; THE LIMIT IS 26 TERMS.</p>
+
+<p><strong>Order of operations</strong></p>
+
+<ul>
+	<li>Innermost, when operation blocks are nested</li>
+	<li>Raising to a power - use nested operations to raise a power to a power or you may get unexpected results.&nbsp; Switch to the code view to verify that the operations performed on the terms are what you expect.</li>
+	<li>Multiplication &amp; division</li>
+	<li>Addition &amp; subtraction</li>
+</ul>
+
+<p>To change the order of operations, nest operation blocks inside each other, and/or use the <strong>Parentheses </strong>block (below).</p>
+
+<hr>
+<h2>limit</h2>
+
+<p><img src="help-images/_limit_block.png" style="height:36px; width:210px"></p>
+
+<p>The <strong>limit </strong>block allows you to compare the inserted values, and use the highest or lowest value as chosen in the dropdown menu.</p>
+
+<hr>
+<h2>constrain</h2>
+
+<p><img alt="" src="help-images/_constrain_block.png" style="height:36px; width:316px"></p>
+
+<p>The <strong>constrain </strong>block prevents a value from being too large or too small before using it.&nbsp; Insert a value or variable item, and then enter the maximum and minimum values for the range you want that value to stay within before it is used.</p>
+
+<hr>
+<h2>de/increment</h2>
+
+<p><img src="help-images/_increment_block.png" style="height:30px; width:115px"></p>
+
+<p>The <strong>de/increment </strong>block increases (increment) or decreases (decrement) the variable attached to it by 1.</p>
+
+<hr>
+<h2>random</h2>
+
+<p><img src="help-images/_random_block.png" style="height:37px; width:295px"></p>
+
+<p>The <strong>random </strong>block provides a random number between the first inserted low value and the second inserted high value. The first number must be smaller than the second number. If they are not in that order, the resulting random value may be unexpected, such as a number outside the range specified.</p>
+
+<hr>
+<h2>bitwise</h2>
+
+<p><img src="help-images/_bitwise_block.png" style="height:36px; width:212px"></p>
+
+<p>The <strong>bitwise </strong>block performs a bitwise operation (&amp; AND, | OR, ^ XOR, &gt;&gt; right shift, &lt;&lt; left shift) on the two values inserted.</p>
+
+<hr>
+<h2>boolean comparison</h2>
+
+<p><img src="help-images/_boolean_block.png" style="height:36px; width:132px"></p>
+
+<p>The <strong>boolean comparison</strong> block performs a boolean comparison between the two inserted values and provides a 1/true or 0/false depending on the option selected (and, or, and not, or not).</p>
+
+<hr>
+<h2>not</h2>
+
+<p><img src="help-images/_not_block.png" style="height:26px; width:75px"></p>
+
+<p>The <strong>not </strong>block performs the selected operation on the value attached and provides the result. The options are:</p>
+
+<ul>
+	<li>not: provide the boolean (1/true or 0/false) opposite of the value attached to it. (Any number other than 0 provides a 0/false.)</li>
+	<li>negate: provide the signed value complement; for example, negate 9 provides -9).</li>
+	<li>abs: provide the absolute value; for example, absolute 9 and absolute -9 both provide 9.)</li>
+</ul>
+
+<hr>
+<h2>parentheses</h2>
+
+<p><img alt="" src="help-images/math_parentheses_block.png" style="height:36px; width:81px"></p>
+
+<p>The <strong>parentheses </strong>block surrounds the enclosed block(s) with parentheses. Use parentheses to change the order of operations in a series of blocks.</p>
+
+<hr>
+<h2>compare values</h2>
+
+<p><img src="help-images/_compare_values_block.png" style="height:36px; width:117px"></p>
+
+<p>The <strong>compare values</strong> block compares two inserted values and provides a boolean value, 1 if the equation is true, and 0 if it is false. Choose the type of comparison from the dropdown menu:</p>
+
+<ul>
+	<li>= equal to</li>
+	<li>≠ not equal to</li>
+	<li>&gt; greater than</li>
+	<li>&lt; less than</li>
+	<li>≥ greater than or equal to</li>
+	<li>≤ less than or equal to</li>
+</ul>
+
+<hr>
+<h2>map value</h2>
+
+<p><img alt="" src="help-images/map_block.png" style="height:36px; width:504px"></p>
+
+<p>The <strong>map value</strong> block scales and offsets the inserted value from the first defined range to the second defined range. &nbsp;This block&nbsp;<strong>does not</strong>&nbsp;constrain the value that you've entered. &nbsp;For example, given the ranges shown the the block above, if the value you enter is -5, it will output -10, because the block is asking the new range to be twice the original range.</p>
+
+<hr>
+<h2>advanced math</h2>
+
+<p><img alt="" src="help-images/_advanced_math_block.png" style="height:40px; width:316px"></p>
+
+<p>The<strong> advanced math </strong>block performs a trigonometric, exponential, or logrithmic function on the inserted values, and stores the result in a variable. Angles are in integer degrees, not radians. Options are:</p>
+
+<ul>
+	<li>the cosine</li>
+	<li>the sine</li>
+	<li>the tangent</li>
+	<li>the square root</li>
+	<li>e raised to the power</li>
+	<li>the logarithm (base 10)</li>
+	<li>the natural logarithm)</li>
+</ul>
+
+<p>Since Blockly is working only with integer math, the block requires you to begin with a multiplier (the first inserted value). Although you could use 1 here, larger numbers make this block more precise.</p>
+
+<hr>
+<h2>inverse trig</h2>
+
+<p><img alt="" src="help-images/_inverse_trig_block.png" style="height:40px; width:314px"></p>
+
+<p>The<strong> inverse trig</strong> block performs an inverse trigonometric function. The angles that this block calculates and stores are in integer degrees, not radians. Options are:</p>
+
+<ul>
+	<li>arcsine</li>
+	<li>arccosine</li>
+	<li>arctangent</li>
+</ul>
+
+<p>Because inverse trigonometry operations usually are done on ratios (one number divided by another, the block requires you to input both the numerator and denominator of the ratio.&nbsp; If you need the inverse trig operation of a single number, use 1 as the denominator (the second number).</p>
+</div></body></html>

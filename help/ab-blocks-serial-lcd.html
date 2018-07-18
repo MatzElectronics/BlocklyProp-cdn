@@ -1,0 +1,71 @@
+<html><link href="help-style.css" rel="stylesheet" type="text/css" /><body><div class="field-item even" property="content:encoded"><h2>BlocklyProp reference for <strong>SERIAL LCD </strong>blocks</h2>
+<p><img alt="" src="https://learn.parallax.comhelp-images/IconActivityBoard.png"><img alt="" src="https://learn.parallax.comhelp-images/IconFlip.png"><img alt="" src="https://learn.parallax.comhelp-images/IconQ44.png">For Activity Board, FLiP, and Other board types. Not available for Badge or Scribbler Robot board types. I/O pin availability will vary with board type. Use care if accessing I/O pins connected to built-in accessory circuits on your board. Refer to your board's product guide for I/O pin assignment details.</p>
+<p>The <strong>SERIAL LCD </strong>blocks are used to set up and send information to be displayed (or played) on Parallax 2x16 (<a href="https://www.parallax.com/product/27976" target="_blank">#27976</a> &amp; <a href="https://www.parallax.com/product/27977" target="_blank">#27977</a>) and 4x20 (<a href="https://www.parallax.com/product/27979" target="_blank">#27979</a>) character LCD modules.</p>
+<p><img alt="" src="https://learn.parallax.comhelp-images/PLX-lcd-modules.png"></p>
+<hr>
+<h2>LCD initialize</h2>
+<p><img src="https://learn.parallax.comhelp-images/_LCD_init.png"></p>
+<p>The <strong>LCD initialize block </strong>is used to set up a connection to a Parallax Serial LCD module. If you forget to use this block, other LCD blocks will remind you with a triangle-shaped warning icon: <img alt="" src="https://learn.parallax.comhelp-images/LCD-init-icon.png"></p>
+<ul>
+<li><strong>PIN </strong>must be set to the Propeller I/O pin it is connected to. Options are 0-27; however, I/O pins 18-27 are connected to other circuits on the Propeller Activity Board and should not be used here.</li>
+<li><strong>baud </strong>must match the switches set on the back of the Parallax LCD module:</li>
+</ul>
+<p><img alt="" src="https://learn.parallax.comhelp-images/lcd-setup.png"></p>
+<p>The module can be plugged into the breadboard on the Propeller Activity Board or Propeller Activity Board WX, and the +5VDC, GND, and RX wires can be connected as shown:</p>
+<p><img alt="" src="help-images/lcd-hookup-400.png"></p>
+<hr>
+<h2>LCD print text</h2>
+<p><img src="https://learn.parallax.comhelp-images/LCD-text-quotes.png"></p>
+<p>The <strong>LCD print text </strong>block sends the inserted text string to the serial LCD module.</p>
+<hr>
+<h2>LCD print number</h2>
+<p><img src="https://learn.parallax.comhelp-images/_LCD_print_number.png"></p>
+<p>The <strong>LCD print number</strong> block sends the inserted number value to the serial LCD module. Use the dropdown menu to choose how to display the value, as a decimal, hexadecimal, or binary number.</p>
+<hr>
+<h2>LCD print multiple</h2>
+<p><img alt="" src="help-images/LCD_print_multiple.jpg"></p>
+<p>The<strong> LCD print multiple </strong>block can print several terms of different types on a single line. Click the gear icon to drag additional terms into the list, then attach appropriate values to the block.&nbsp; Options are:</p>
+<ul>
+<li>text</li>
+<li>decimal number</li>
+<li>hexadecimal number</li>
+<li>binary number</li>
+<li>floating point number</li>
+<li>ASCII character</li>
+</ul>
+<p>Checking the Specify Digits block adds a fill-in field next to all attached number values.&nbsp;</p>
+<p><strong>Floating point number option</strong></p>
+<p>BlocklyProp uses integer numbers. The<strong> floating point number</strong> option allows an integer value to be displayed as a decimal number.&nbsp; Use its drop-down menu to divide the integer by a multiple of 10 to scale and display the number appropriately. The Specify Digits checkbox activates an additional field by each numeric term.</p>
+<p><img alt="" src="help-images/LCD_floating_point.jpg"></p>
+<hr>
+<h2>LCD command</h2>
+<p><img src="https://learn.parallax.comhelp-images/_LCD_command.png"></p>
+<p>The <strong>LCD command </strong>block is used to issue specific commands to the LCD module. Select an option from the dropdown menu:</p>
+<ul>
+<li>clear screen - erases the screen</li>
+<li>move cursor left - by one character</li>
+<li>move cursor right - by one character</li>
+<li>move cusror down - to the next line</li>
+<li>carriage return - places cursor at first character in next line</li>
+<li>backlight on</li>
+<li>backlight off</li>
+<li>display off</li>
+<li>display on, cursor off</li>
+<li>display on, cursor off, blink</li>
+<li>display on, cursor on</li>
+<li>display on, cursor on, blink</li>
+</ul>
+<hr>
+<h2>LCD set cursor</h2>
+<p><img src="https://learn.parallax.comhelp-images/_LCD_set_cursor.png"></p>
+<p>The <strong>LCD set cursor</strong> block sets the position of the cursor on the LCD screen. It can be used to print text or numbers at any location on the screen.</p>
+<hr>
+<h2>LCD play note</h2>
+<p><img src="https://learn.parallax.comhelp-images/_LCD_play_note.png"></p>
+<p>The <strong>LCD play note</strong> block is used to make the Parallax LCD module play a musical note from its onboard piezo speaker.</p>
+<ul>
+<li>Set the note pitch (or rest) from the first dropdown.</li>
+<li>Set the octave, 3rd to 7th, in the second dropdown.</li>
+<li>Set the note duration in the third dropdown, ranging from a whole note (2 seconds) down to a sixty-fourth (31 ms).</li>
+</ul>
+</div></body></html>

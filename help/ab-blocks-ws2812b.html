@@ -1,0 +1,67 @@
+<html><link href="help-style.css" rel="stylesheet" type="text/css" /><body><div class="field-item even" property="content:encoded"><h2>BlocklyProp reference for <strong>RGB LED </strong>blocks</h2>
+
+<p><img alt="" src="help-images/IconActivityBoard.png" style="float:left; height:17px; margin-left:10px; margin-right:10px; width:19px"><img alt="" src="help-images/IconFlip.png" style="float:left; height:17px; margin-left:10px; margin-right:10px; width:19px"><img alt="" src="help-images/IconQ44.png" style="height:17px; margin-left:10px; margin-right:10px; width:19px">For Activity Board, FLiP, and Other board types. Not available for Badge or Scribbler Robot board types.</p>
+
+<p>BlocklyProp supports just one <strong>RGB-LED Init </strong>block per project, so if you want to use multiple RGB LEDs, chain them together instead of wiring them to separate Propeller I/O pins. These blocks are intended for WS2812B RGB LED modules (Parallax #<a href="http://www.parallax.com/product/28085" target="_blank">28025 </a>&amp; <a href="http://www.parallax.com/product/28086" target="_blank">28026</a>).</p>
+
+<hr>
+<h2>RGB-LED init</h2>
+
+<p><img alt="" src="help-images/_rgb_led_init.png" style="height:41px; width:468px"></p>
+
+<p><img alt="" src="help-images/BlocklyIcons-Brain.png" style="height:17px; margin-left:10px; margin-right:10px; width:19px">This block lauches a processor automatically, one per block instance.</p>
+
+<p>The <strong>RGB-LED init </strong>block is used to specify the Propeller I/O pin connected to the RGB LED module(s), and to also specify the number of LEDs chained together. If you forget to use this block, other RGB-LED blocks will remind you with a triangle-shaped warning icon: <img alt="" src="http://learn.parallax.comhelp-images/LCD-init-icon.png" style="height:41px; width:45px"></p>
+
+<ul>
+	<li>In the first dropdown field select the Propeller I/O pin connected to the signal inpupt pin of the first RGB LED, in a chain of 1 or more LEDs.</li>
+	<li>In the second field, enter the number of RGB LEDs chained together.</li>
+	<li>In the third drop-down, specify the type of RGB LEDs being used (WS2812 is the only initial option).</li>
+</ul>
+
+<p>If you use more than one RGB-LED init block in a project, the <strong>RGB-LED set</strong> and <strong>RBG-LED update</strong> blocks will provide a dropdown for selecting the targeted Propeller I/O pin for a given set of RGB-LEDs.</p>
+
+<hr>
+<h2>RGB-LED set</h2>
+
+<p><img alt="" src="help-images/_rgb_led_set_color.png" style="height:178px; width:479px"></p>
+
+<p>The <strong>RGB-LED set</strong> block allows you to choose a color for a specific RGB LED.</p>
+
+<ul>
+	<li>In the number field, Insert a number value specifying the location of the target RGB LED in the chain.&nbsp; RGB LED number 1 is the unit directly connected to the Propeller I/O pin.</li>
+	<li>In the color field, insert a color value. Click its window and choose a color* from the pop-up menu.</li>
+	<li>If you are using more than one<strong> RGB-LED init</strong> block in a project, select the Propeller I/O pin for the target RGB LED(s) from the dropdown that will appear.</li>
+</ul>
+
+<p>Use a new block to set the color for each RGB LED in the chain. The settings will not take effect until the program execution reaches an <strong>RGB-LED update </strong>block.</p>
+
+<p>*Keep in mind that with WS2812B LEDs, brightness and current draw will vary by color, with white being the brightest and most power-consuming setting.</p>
+
+<hr>
+<h2>RGB-LED set multiple</h2>
+
+<p><img alt="" src="help-images/RGB-LED_set_multi.png" style="height:178px; width:535px"></p>
+
+<p>The <strong>RGB-LED set</strong> block allows you to choose a color for a specific contiguous range of RGB LEDs chained together.</p>
+
+<ul>
+	<li>In the first number field, Insert a number value specifying the location of the first target RGB LED in the chain.&nbsp; RGB LED number 1 is the unit directly connected to the Propeller I/O pin.</li>
+	<li>In the second number field, Insert a number value specifying the location of the last target RGB LED in desired chain.&nbsp;</li>
+	<li>In the color field, insert a color value. Or, click its window and choose a color* from the pop-up menu.</li>
+	<li>If you are using more than one<strong> RGB-LED init</strong> block in a project, select the Propeller I/O pin for the target RGB LED(s) from the dropdown that will appear.</li>
+</ul>
+
+<p>Use a new block to set the color for each RGB LED in the chain. The settings will not take effect until the program execution reaches an RGB-LED update block.</p>
+
+<p>*Keep in mind that with WS2812B LEDs, brightness and current draw will vary by color, with white being the brightest and most power-consuming setting.</p>
+
+<hr>
+<h2>RGB-LED update</h2>
+
+<p><img alt="" src="help-images/_rgb_led_update.png" style="height:30px; width:177px"></p>
+
+<p>The<strong> RGB-LED update</strong> block updates all of the RGB LED colors to the settings specified in the most recent <strong>RGB-LED set </strong>blocks. Each time the colors are changed with <strong>RGB-LED set blocks</strong>, the <strong>RGB-LED update</strong> block must be used again to see the&nbsp; new colors.</p>
+
+<p>If you use more than one RGB-LED init block in a project, the <strong>RBG-LED update </strong>blocks will provide a dropdown for selecting the targeted Propeller I/O pin for a given set of RGB-LEDs.</p>
+</div></body></html>

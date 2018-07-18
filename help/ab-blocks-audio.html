@@ -1,0 +1,75 @@
+<html><link href="help-style.css" rel="stylesheet" type="text/css" /><body><div class="field-item even" property="content:encoded"><h2>BlocklyProp reference for AUDIO blocks</h2>
+
+<p>BlocklyProp blocks for generating audio. See each block for board type compatibility.</p>
+
+<hr>
+<h2>WAV play</h2>
+
+<p><img src="help-images/_wav_play.png" style="height:30px; width:184px"></p>
+
+<p><img alt="" src="help-images/IconActivityBoard.png" style="height:17px; margin-left:10px; margin-right:10px; width:19px"> This block is ONLY available for the Propeller Activity Board WX board type.</p>
+
+<p><img alt="" src="help-images/BlocklyIcons-Brain.png" style="height:17px; margin-left:10px; margin-right:10px; width:19px">This block lauches TWO processors automatically.</p>
+
+<p>The <strong>WAV play</strong> block sets up both the SD card reader on the Propeller Activity Board, sets up the WAV player object in the Propeller microcontroller, and plays the WAV formatted audio file from the SD card whose filename was typed into the block.&nbsp;</p>
+
+<p><strong>WAV file format must be in the correct format.</strong></p>
+
+<p>Options from our <a href="https://learn.parallax.com/support/reference/sound-library" target="_blank">Sound Library reference section:</a></p>
+
+<ul>
+	<li>Download pre-formatted files from the Sound Library</li>
+	<li>Re-format your audio files with the free Audacity software - tutoiral</li>
+	<li>Create your own new audio files with Audacity - tutorial</li>
+</ul>
+
+<p><strong>WAV blocks must be used with other types of blocks.</strong></p>
+
+<p>The <strong>WAV play </strong>block launches processors to manage the SD card and generate the audio oputput.&nbsp; However, once the first processor has launched the others, it will shut itself down if it does not have any other blocks to execute. This breaks the project, and instead of hearing your audio track, you will just hear a buzzing sound.&nbsp; To avoid this, the first processor must keep running.&nbsp; If all you want to do is play the WAV file and nothing else, this can be done with an empty <strong>repeat forever</strong> block, or a <strong>pause </strong>block with a duration lasting longer than your audio track, right after the <strong>WAV play</strong> block.</p>
+
+<hr>
+<h2>WAV status</h2>
+
+<p><img src="help-images/_wav_status.png" style="height:25px; width:105px"></p>
+
+<p><img alt="" src="help-images/IconActivityBoard.png" style="height:17px; margin-left:10px; margin-right:10px; width:19px">This block is ONLY available for the Propeller Activity Board WX board type.</p>
+
+<p>The<strong> WAV status</strong> block provides a value of 1 (one/true) if a WAV file is currently playing and a value of 0 (zero/false) if a WAV file is not currently playing.</p>
+
+<hr>
+<h2>WAV volume</h2>
+
+<p><img src="help-images/_wav_volume.png" style="height:41px; width:201px"></p>
+
+<p><img alt="" src="help-images/IconActivityBoard.png" style="height:17px; margin-left:10px; margin-right:10px; width:19px"> This block is ONLY available for the Propeller Activity Board WX board type.</p>
+
+<p>The <strong>WAV volume </strong>block set the volume of the Propeller’s WAV player. A value of 0 is quietest and 10 is loudest.</p>
+
+<hr>
+<h2>WAV stop</h2>
+
+<p><img src="help-images/_wav_stop.png" style="height:29px; width:86px"></p>
+
+<p><img alt="" src="help-images/IconActivityBoard.png" style="height:17px; margin-left:10px; margin-right:10px; width:19px"> This block is ONLY available for the Propeller Activity Board WX board type.</p>
+
+<p>The<strong> WAV stop</strong> block stops playing a WAV file.</p>
+
+<hr>
+<h2>frequency out</h2>
+
+<p>This block is available for the Propeller Activity Board WX, Propeller FLiP module, or Other board types. Propeller I/O pin availability will vary by board type.</p>
+
+<p>Not available for Badge or Scribbler Robot board types.</p>
+
+<p><img alt="" src="help-images/IconActivityBoard.png" style="float:left; height:17px; margin-left:10px; margin-right:10px; width:19px"><img alt="" src="help-images/IconFlip.png" style="float:left; height:17px; margin-left:10px; margin-right:10px; width:19px"><img alt="" src="help-images/IconQ44.png" style="height:17px; margin-left:10px; margin-right:10px; width:19px"></p>
+
+<p><img src="help-images/_freq.png" style="height:41px; width:440px"></p>
+
+<p>The<strong> frequency out</strong> block generates pulses of the specified frequency and duration. An example use would be generating beeps on a piezospeaker.</p>
+
+<ul>
+	<li>PIN: select the Propeller I/O pin on which to send the signal.</li>
+	<li>duration (ms): insert a value block to set the duration in milliseconds for the pulses to last.</li>
+	<li>frequency (Hz) insert a value block to set the frequency of the pulses, in hertz.&nbsp;</li>
+</ul>
+</div></body></html>

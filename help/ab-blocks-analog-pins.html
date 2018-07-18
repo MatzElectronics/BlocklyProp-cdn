@@ -1,0 +1,56 @@
+<html><link href="help-style.css" rel="stylesheet" type="text/css" /><body><div class="field-item even" property="content:encoded"><h2>BlocklyProp reference for VOLTAGE blocks</h2>
+
+<p>Block availability varies by board type</p>
+
+<hr>
+<h2>A/D read</h2>
+
+<p><img src="help-images/_AD-read-ABWX.png" style="height:26px; width:317px"></p>
+
+<p><img alt="" src="help-images/IconActivityBoard.png" style="height:17px; margin-left:10px; margin-right:10px; width:19px"><strong>Propeller Activity Board WX board type only</strong></p>
+
+<p>The <strong>A/D read</strong> block is designed for the A/D and D/A circuits built directly into the Propeller Activity Board (original and WX)</p>
+
+<p>This block reads and reports the voltage input on the A/D channel chosen in the dropdown menu. The value provided by the block is in volt-hundredths: if +2.50 volts is applied to the A/D channel, the block will provide a value of 250.&nbsp; It can attached to a <strong>variable set </strong>block, or used wherever a number value block is accepted.</p>
+
+<hr>
+<h2>D/A output</h2>
+
+<p><img src="help-images/_DA-ABWX.png" style="height:41px; width:368px"></p>
+
+<p><img alt="" src="help-images/IconActivityBoard.png" style="height:17px; margin-left:10px; margin-right:10px; width:19px"><strong> Propeller Activity Board WX board type only</strong></p>
+
+<p><img alt="" src="help-images/BlocklyIcons-Brain.png" style="height:17px; margin-left:10px; margin-right:10px; width:19px">This block lauches a processor automatically. Using a second block for an additional D/A channel will not launch an additional processor.</p>
+
+<p>The <strong>D/A output </strong>block sets the output voltage on the D/A channel chosen in the dropdown menu. The block expects a value in volt-hundredths: if value block placed in this block is 250, the D/A will output +2.50 volts.</p>
+
+<hr>
+<h2>A/D chip read</h2>
+
+<p><img alt="" src="help-images/_AD-chip-read.png" style="height:51px; width:477px"></p>
+
+<p><img alt="" src="help-images/IconFlip.png" style="height:17px; margin-left:10px; margin-right:10px; width:19px"><strong><img alt="" src="help-images/IconQ44.png" style="height:17px; width:19px"> Propeller FLiP or Project Board and Other board types only</strong></p>
+
+<p>The <strong>A/D chip read </strong>block is designed for specific analog to digital converter chips that can be added to the prototyping area of Propeller boards.&nbsp; This includes the <a href="http://learn.parallax.com/tutorials/language/blocklyprop/tilt-tones-blocklyprop" target="_blank">ADC0831 </a>and <a href="https://www.parallax.com/product/603-00039" target="_blank">MCP3002 </a>carried by Parallax, as well as other chips in the MCP3 line.</p>
+
+<p>This block reports the voltage input on a channel of a suppored A/D converter chip. It can attached to a <strong>variable set</strong> block, or used wherever a number value block is accepted. To use the block:</p>
+
+<ul>
+	<li>Select the A/D converter chip model you are using from the dropdown menu</li>
+	<li>Set the Propeller I/O pin numbers connected to the A/D chip's CLK, DO, DI and CS lines</li>
+	<li>Set the target channel on the A/D chip used. The options will vary depending on the A/D chip model chosen.</li>
+</ul>
+
+<p>The value provided by the block is in volt-hundredths: if +2.50 volts is applied to the A/D channel, the block will provide a value of 250. &nbsp;Unless the <strong>A/D chip set Vref</strong> block is used, this block assumes that the A/D chip's Vref pin is connected to +3.3 volts.</p>
+
+<hr>
+<h2>A/D chip set Vref</h2>
+
+<p><img alt="" src="help-images/_AD-chip-vref.png" style="height:30px; width:230px"></p>
+
+<p><img alt="" src="help-images/IconFlip.png" style="height:17px; margin-left:10px; margin-right:10px; width:19px"><strong><img alt="" src="help-images/IconQ44.png" style="height:17px; width:19px"> Propeller FLiP or Project Board and Other board types only</strong></p>
+
+<p>The <strong>A/D chip set Vref </strong>block is designed for specific analog to digital converter chips that can be added to the prototyping area of Propeller boards.&nbsp; This includes the <a href="http://learn.parallax.com/tutorials/language/blocklyprop/tilt-tones-blocklyprop" target="_blank">ADC0831 </a>and <a href="https://www.parallax.com/product/603-00039" target="_blank">MCP3002 </a>carried by Parallax, as well as other chips in the MCP3 line.</p>
+
+<p>This block is used to improve the accuracy of the value returned by the <strong>A/D chip read</strong> block and/or to use a different voltage (such as +5.0 volts) for the A/D chip's measurements.&nbsp; Use this block before the <strong>A/D chip read&nbsp;</strong>block in your project, or at the beginning of your program to set the Vref value globally. &nbsp;Enter the value of the voltage applied to the A/D chip's Vref pin. The number entered is in volt-hundredths; if +3.3 volts&nbsp;is applied to Vref, enter 330.</p>
+</div></body></html>

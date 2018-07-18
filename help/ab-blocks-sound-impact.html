@@ -1,0 +1,33 @@
+<html><link href="help-style.css" rel="stylesheet" type="text/css" /><body><div class="field-item even" property="content:encoded"><h2>BlocklyProp reference for SOUND IMPACT SENSOR blocks</h2>
+
+<p><img alt="" src="help-images/IconActivityBoard.png" style="float:left; height:17px; margin-left:10px; margin-right:10px; width:19px"><img alt="" src="help-images/IconFlip.png" style="float:left; height:17px; margin-left:10px; margin-right:10px; width:19px"><img alt="" src="help-images/IconQ44.png" style="height:17px; margin-left:10px; margin-right:10px; width:19px">These blocks are for Parallax's <a href="http://www.parallax.com/product/29132">Sound Impact Sensor (#29132)</a> and the Propeller Activity Board WX, FLiP, or Other board types. Not available for Badge or Scribbler Robot board types.</p>
+
+<p><span class="notebox">New to this sensor? <a href="/support/reference/activity-board-wx-block-reference/sensor/sound-impact-sensor/sound-impact-wiring">Click here to see an example schematic and quick Blockly program</a> to help you get started</span></p>
+
+<hr>
+<h2>Sound Impact initialize</h2>
+
+<p><img src="help-images/sound_impact_init_block.png" style="height:41px; width:248px"></p>
+
+<p><img alt="" src="help-images/BlocklyIcons-Brain.png" style="height:17px; margin-left:10px; margin-right:10px; width:19px">This block lauches a processor automatically. Use only instance of this block per project.</p>
+
+<p>The <strong>Sound Impact initialize </strong>block sets up the Sound Impact sensor. If you forget this block, the other Sound Impact sensor blocks will display a triangle warning icon as a reminder: <img alt="" src="help-images/sound_impact_warn.png" style="height:26px; width:59px"></p>
+
+<ul>
+	<li>In the PIN dropdown, select the Propeller I/O pin connected to the Sound Impact Sensor's signal pin.</li>
+</ul>
+
+<hr>
+<h2>Sound Impact get count</h2>
+
+<p><img src="help-images/sound_impact_get_block.png" style="height:43px; width:202px"></p>
+
+<p>The <strong>Sound Impact get count</strong> block returns how many sound impacts (loud sounds) were detected since the last time this block was used. &nbsp;If no sound impacts were detected, it provides a value of zero.</p>
+
+<hr>
+<h2>Sound Impact close</h2>
+
+<p><img src="help-images/sound_impact_close_block.png" style="height:46px; width:177px"></p>
+
+<p>The <strong>Sound Impact close</strong> block makes the Propeller microcontroller stop listening to the Sound Impact sensor and frees up the resources it was using inside of the Propeller.</p>
+</div></body></html>

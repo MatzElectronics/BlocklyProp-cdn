@@ -1,0 +1,38 @@
+<html><link href="help-style.css" rel="stylesheet" type="text/css" /><body><div class="field-item even" property="content:encoded"><p>BlocklyProp blocks for interacting with the Propeller I/O pins available from the S3 Hacker Port.</p>
+
+<hr>
+<h2>make PIN</h2>
+
+<p><img src="pin_make_b.png" style="height: 28px; width: 176px;"></p>
+
+<p>The <strong>make PIN </strong>block sets the function and state of a Hacker Port digital&nbsp;I/O pin.</p>
+
+<p>Select a Hacker Port digital&nbsp;I/O pin, P0 to P5.&nbsp;</p>
+
+<p>Set the function and state with the second drop-down:&nbsp;</p>
+
+<ul>
+	<li><strong>High </strong>sets the pin to output +3.3V.</li>
+	<li><strong>Low </strong>connects the pin as an output to Ground.</li>
+	<li><strong>Toggle </strong>would set the pin to a high output if it were Low or to a Low output if it was High.</li>
+	<li><strong>Input </strong>sets the pin as an input, which allows the Propeller to read the high or low voltage applied to the pin, and block current from going in or coming out of the pin.</li>
+	<li><strong>Reverse </strong>sets the pin to an input if it was output, or sets the pin to an output if it was input.</li>
+</ul>
+
+<hr>
+<h2>check PIN</h2>
+
+<p><img src="pin_check_b.png" style="height: 24px; width: 127px;"></p>
+
+<p>The <strong>check PIN </strong>block returns a 1 if the digital I/O pin selected is high and returns a 0 (zero) if the pin is low. It is used to read the pin as an input or to check what it was set to previously as an output.</p>
+
+<hr>
+<h2>check analog PIN</h2>
+
+<p><img src="pin_check_analog_b.png" style="height: 25px; width: 170px;"></p>
+
+<p>The&nbsp;<strong>check analog PIN&nbsp;</strong>block returns the voltage (in volt-100ths) sensed by the specified analog Hacker Port&nbsp;I/O pin (A0 or A1)</p>
+
+<hr>
+<h2>&nbsp;</h2>
+</div></body></html>

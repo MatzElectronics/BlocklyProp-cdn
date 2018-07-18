@@ -1,0 +1,53 @@
+<html><link href="help-style.css" rel="stylesheet" type="text/css" /><body><div class="field-item even" property="content:encoded"><p><strong>LINE</strong> category blocks monitor the IR sensors on the underside of the Scribbler 3 Robot.</p>
+
+<p><img alt="" src="/sites/default/files/content/S3/4-2-01.png"></p>
+
+<hr>
+<h2>line sensor calibrate</h2>
+
+<p><img src="calibrate_line_b.png" style="height: 27px; width: 137px;"></p>
+
+<p>The <strong>line sensor </strong><strong>calibrate </strong>block<strong>,</strong><strong>&nbsp;</strong>used at the very beginning of a line following program, helps the line following sensors determine how reflective the line and the background surface are. &nbsp;The Scribbler robot will spin in a complete circle - place it so that as it rotates, it can see both the line and the background. Once calibration has completed, it will store a "line threshold" value into the Scribbler's EEPROM memory for use by the <strong>detect line</strong>&nbsp;block.</p>
+
+<hr>
+<h2>detect line</h2>
+
+<p><img src="line_detect_b.png" style="height: 24px; width: 358px;"></p>
+
+<p>The&nbsp;<strong>detect line&nbsp;</strong>block has 3 selectable conditions. When the S3 line sensors detect a condition matching the block conditions selected by the user, this block will execute any program blocks inside of it.</p>
+
+<p>The first condition determines whether or not to provide a true (when "is" is selected)&nbsp;or false (when "is not" is selected) value when the conditions specified by the other two drop-down menus have been met.<em> </em></p>
+
+<p>The second condition determines what part of a line to try and detect, with the following options:</p>
+
+<ul>
+	<li><em>the center:&nbsp;</em>consider a detection successful if the entire sensor is over a line</li>
+	<li><em>the left edge:</em>&nbsp;consider a detection successful if the sensor is over the left edge of a line</li>
+	<li><em>the right edge:</em>&nbsp;consider a detection successful if the sensor is over the right edge of a line</li>
+	<li><em>any part:&nbsp;</em>consider a detection successful if any part of the sensor is over a line</li>
+</ul>
+
+<p>The third condition defines whether the S3 is looking for a black line on a white surface or a white line on a&nbsp;black surface.</p>
+
+<hr>
+<h2>line sensor reading</h2>
+
+<p><img src="line_sense.png" style="height:27px; width:219px"></p>
+
+<p>The <strong>line sensor</strong> <strong>reading</strong> block returns the current line sensor reflection reading, a value between 0 and 100, for either the left or right line sensor depending on which is selected. Reflectivity depends on surface color; darker surfaces have less reflectivity (closer to 0), lighter surfaces have more (closer to 100).</p>
+
+<hr>
+<h2>DEPRECATED: detect line (old version)</h2>
+
+<p><img src="line_if_old.png"></p>
+
+<p>This block has been deprecated. &nbsp;It will still work in programs that already include it, but it is not available for use in new programs. &nbsp;It may also appear orange, signifying that a newer block is available and should be used.&nbsp; &nbsp;It was replaced to provide more flexibility by allowing both <strong>if </strong>and <strong>else </strong>conditions when combined with the&nbsp;<strong>if...do</strong>&nbsp;block.</p>
+
+<p>The functionality of this block can be recreated using a handful of other blocks. &nbsp;Most users will be able to combine the&nbsp;<strong>if...do</strong>&nbsp;block with the current&nbsp;<strong>detect line</strong>&nbsp;block:</p>
+
+<p><img alt="" src="line_detect_if_do.png" style="height:49px; width:335px"></p>
+
+<p>For users who needed the functionality provided by the "was" and "was not" conditions, you can set up two variables to track the current and past values of the line sensor:</p>
+
+<p><img alt="" src="line_detect_with_variables.png"></p>
+</div></body></html>

@@ -1,0 +1,152 @@
+<html><link href="help-style.css" rel="stylesheet" type="text/css" /><body><div class="field-item even" property="content:encoded"><h2>BlocklyProp reference for <strong>OLED</strong> blocks</h2>
+
+<p><img alt="" src="help-images/IconActivityBoard.png" style="float:left; height:17px; margin-left:10px; margin-right:10px; width:19px"><img alt="" src="help-images/IconFlip.png" style="float:left; height:17px; margin-left:10px; margin-right:10px; width:19px"><img alt="" src="help-images/IconQ44.png" style="height:17px; margin-left:10px; margin-right:10px; width:19px">Available for Activity Board, FLiP, and Other board types. Not available for Badge or Scribbler Robot board types. I/O pin availability will vary with board type.</p>
+
+<p>The <a href="http://www.parallax.com/product/28087" target="_blank">96 x 64 Color OLED display module (#28087)</a> uses a coordinate grid to define where text, numbers, points, lines, and shapes can be drawn on the display module’s screen. The coordinates start at 0 (leftmost column), 0 (top row) and increase to 95 (rightmost column), 63 (bottom row).</p>
+
+<p><strong>See the <a href="http://learn.parallax.com/tutorials/language/blocklyprop/oled-display-blocklyprop" target="_blank">OLED Display with BlocklyProp tutoria</a>l to get started.</strong></p>
+
+<p><img alt="" src="help-images/oled-display.png" style="height:168px; width:141px"></p>
+
+<p><span class="warnbox"><strong>WARNING! </strong>The <strong>OLED </strong>blocks can only be used from your main program. These blocks will not work if used inside <strong>function </strong>blocks that are then launched with the <strong>new processor </strong>block.</span></p>
+
+<hr>
+<h2>OLED initialize</h2>
+
+<p><img src="help-images/_oled_init.png" style="height:30px; width:474px"></p>
+
+<p>The <strong>OLED initialize</strong> block is used to set up the Color OLED display module. The DIN, CLK, CS, D/C, and RES pins on the module must be matched to the Propeller I/O pins they are connected to.&nbsp;</p>
+
+<p>If you forget to use this block in your project, other OLED blocks will display a triangle warning symbol. Click the triangle, and you will see a reminder message to use the OLED initialize block at the beginning of your program.</p>
+
+<p><img alt="" src="help-images/OLED-warning.jpg" style="height:95px; width:324px"></p>
+
+<hr>
+<h2>OLED font loader</h2>
+
+<p><img src="help-images/_oled_font_load.png" style="height:25px; width:242px"></p>
+
+<p>The <strong>OLED font loader</strong> block must be run as its own program (with no other blocks) before any medium or large fonts can be used. When this block is run, it takes about a minute to load all of the fonts onto the EEPROM memory chip on the Propeller Activity Board.</p>
+
+<p>The fonts are stored in EEPROM locations 40576..63400.</p>
+
+<hr>
+<h2>OLED max height</h2>
+
+<p><img src="help-images/_oled_max_height.png" style="height:25px; width:144px"></p>
+
+<p>The <strong>OLED max height </strong>block returns the vertical value of the bottom row of pixels: 63.</p>
+
+<hr>
+<h2>OLED max width</h2>
+
+<p><img src="help-images/_oled_max_width.png" style="height:25px; width:139px"></p>
+
+<p>The <strong>OLED max width</strong> block returns the horizontal value of the rightmost column of pixels: 95.</p>
+
+<hr>
+<h2>OLED command</h2>
+
+<p><img src="help-images/_oled_command.png" style="height:30px; width:234px"></p>
+
+<p>The <strong>OLED command </strong>block permits you to choose and execute the command selected from the dropdown menu:</p>
+
+<ul>
+	<li>clear screen: clears the entire screen by setting all pixels to black.</li>
+	<li>sleep: turns off the display, while preserving what was drawn on it.</li>
+	<li>wake: takes the display out of sleep mode.</li>
+	<li>invert: Inverts all of the colors on the display.</li>
+</ul>
+
+<hr>
+<h2>OLED font color</h2>
+
+<p><img src="help-images/_oled_font_color.png" style="height:56px; width:242px"></p>
+
+<p>The<strong> OLED font color </strong>block is used to set both the color of the font and the background (highlight) color displayed behind the font characters. If the background color is set to the same color as the font color, the background will be made transparent.</p>
+
+<hr>
+<h2>OLED set text</h2>
+
+<p><img src="help-images/_oled_text_size.png" style="height:30px; width:269px"></p>
+
+<p>The <strong>OLED set text </strong>block is used to set the size (small: 5x7, medium: 11x15, large: 17x23) and the font face (sans/console, serif/typewriter, script/handwriting, bubble/cartoon).</p>
+
+<hr>
+<h2>OLED set cursor</h2>
+
+<p><img src="help-images/_oled_set_cursor.png" style="height:41px; width:284px"></p>
+
+<p>The <strong>OLED set cursor </strong>block sets the top left pixel position where text starts being written.</p>
+
+<hr>
+<h2>OLED print text</h2>
+
+<p><img alt="" src="help-images/_OLED_print_txt.jpg" style="height:41px; width:227px"></p>
+
+<p>The <strong>OLED print text</strong> block is used to send text strings to the OLED module.</p>
+
+<hr>
+<h2>OLED print number</h2>
+
+<p><img src="help-images/_oled_print_number.png" style="height:41px; width:275px"></p>
+
+<p>The <strong>OLED print number </strong>block is used to send numbers to the OLED module. Numbers can be displayed as decimal, hexadecimal, or binary numbers.</p>
+
+<hr>
+<h2>OLED print multiple</h2>
+
+<p><img alt="" src="help-images/oled-print-multi.png" style="height:80px; width:135px"></p>
+
+<p>The<strong> OLED print multiple </strong>block can print several terms of different types on a single line. Click the gear icon to drag additional terms into the list, then attach appropriate values to the block.&nbsp; Options are:</p>
+
+<ul>
+	<li>text</li>
+	<li>decimal number</li>
+	<li>hexadecimal number</li>
+	<li>binary number</li>
+	<li>floating point number</li>
+	<li>ASCII character</li>
+</ul>
+
+<p>Checking the Specify Digits block adds a fill-in field next to all attached number values.&nbsp;</p>
+
+<p><strong>Floating point number option</strong></p>
+
+<p>BlocklyProp uses integer numbers. The<strong> floating point number</strong> option allows an integer value to be displayed as a decimal number.&nbsp; Use its drop-down menu to divide the integer by a multiple of 10 to scale and display the number appropriately. The specify digits checkbox activates an additional field by each numeric term.</p>
+
+<hr>
+<h2>OLED draw pixel</h2>
+
+<p><img src="help-images/_oled_draw_pixel.png" style="height:41px; width:384px"></p>
+
+<p>The <strong>OLED draw pixel </strong>block sets the pixel defined by the first two value blocks to the color defined by the color block.</p>
+
+<hr>
+<h2>OLED draw line</h2>
+
+<p><img src="help-images/_oled_draw_line.png" style="height:134px; width:272px"></p>
+
+<p>The <strong>OLED draw line</strong> block draws a line from the first coordinate to the second coordinate in the color defined by the color block.</p>
+
+<hr>
+<h2>OLED draw triangle</h2>
+
+<p><img src="help-images/_oled_draw_triangle.png" style="height:212px; width:280px"></p>
+
+<p>The <strong>OLED draw triangle</strong> block draws a triangle from the first coordinate to the second coordinate to the third coordinate in the color defined by the color block. The “fill” checkbox sets whether the triangle will be drawn as hollow or filled.</p>
+
+<hr>
+<h2>OLED draw rectangle</h2>
+
+<p><img src="help-images/_oled_draw_rectangle.png" style="height:186px; width:280px"></p>
+
+<p>The <strong>OLED draw rectangle</strong> block draws a rectangle from the first coordinate (top left corner of the rectangle) to the second coordinate (bottom right corner of the rectangle) in the color defined by the color block. The “roundness” value, if set to something other than zero, will round the corners by the amount specified (radius of the roundness). The “fill” checkbox sets whether the rectangle will be drawn as hollow or filled.</p>
+
+<hr>
+<h2>OLED draw circle</h2>
+
+<p><img alt="" src="help-images/OLED_circle.png" style="height:134px; width:257px"></p>
+
+<p>The <strong>OLED draw circle </strong>block will draw a circle whose center is set by the first two value blocks, and in the color defined by the color block. The “fill” checkbox sets whether the circle will be drawn as hollow or filled.</p>
+</div></body></html>

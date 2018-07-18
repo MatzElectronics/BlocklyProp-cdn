@@ -1,0 +1,42 @@
+<html><link href="help-style.css" rel="stylesheet" type="text/css" /><body><div class="field-item even" property="content:encoded"><h2>BocklyProp reference for FINGERPRINT SCANNER blocks</h2>
+
+<p><img alt="" src="help-images/IconActivityBoard.png" style="float:left; height:17px; margin-left:10px; margin-right:10px; width:19px"><img alt="" src="help-images/IconFlip.png" style="float:left; height:17px; margin-left:10px; margin-right:10px; width:19px"><img alt="" src="help-images/IconQ44.png" style="height:17px; margin-left:10px; margin-right:10px; width:19px">These blocks are for use with the <a href="https://www.parallax.com/product/29126" target="_blank">Fingerprint Scanner (#29126)</a> and the Propeller Activity Board WX, Propeller FLiP or Other board types. Not available for Badge or Scribbler Robot board types.</p>
+
+<p><span class="notebox">New to this sensor? <a href="/support/reference/activity-board-wx-block-reference/sensor/fingerprint-scanner/fingerprint-scanner">Click here to see an example schematic and quick Blockly program</a> to help you get started.</span></p>
+
+<hr>
+<h2>Fingerprint scanner initialize</h2>
+
+<p><img alt="" src="help-images/fingerprint-init.png"></p>
+
+<p>Use the<strong> Fingerprint scanner initialize</strong> block to specify which Propeller I/O pins are connected to your device. I/O pins available for this use will vary with board type.&nbsp;</p>
+
+<p>If you forget to use this block in your project, an triangle warning icon will appear on other Fingerprint scanner blocks as a reminder. <img alt="" src="help-images/fingerprint-init-warning.png" style="height:41px; width:48px"></p>
+
+<hr>
+<h2>Fingerprint scanner capture</h2>
+
+<p><img alt="" src="help-images/fingerprint-captures.png"></p>
+
+<p>The <strong>Fingerprint scanner capture</strong> block lets you manage the fingerprint scans that are stored on the device. The action options from the dropdown menu are:</p>
+
+<ul>
+	<li><strong>capture and save to </strong>- capture a fingerprint and save it to device memory, assigning it the ID number of the inserted number value.</li>
+	<li><strong>delete capture for </strong>- delete the captured fingerprint for the specified ID number from device memory.</li>
+	<li><strong>delete all captures</strong>- delete all the captured fingerprints/ID numbers stored in the device memory.</li>
+</ul>
+
+<hr>
+<h2>Fingerprint scanner scan</h2>
+
+<p><img alt="" src="help-images/fingerprint-scan.png"></p>
+
+<p>The Fingerprint scanner scan block can perform three different actions, and provides a value based on the outcome of the action. (However, none of these actions capture and save a new scan onto the device.)</p>
+
+<ul>
+	<li><strong>scan and identify</strong> - scans the finger currently on the glass and searches for a match with the captures stored on the device. If a match is found it provides the capture's ID, if no match is found it provides a zero.</li>
+	<li><strong>scan and compare</strong> - scans the finger currently on the glass and compares it to the stored capture specified by the inserted ID value. If they match, the block provides a 1; if they don't match the block provides a zero.</li>
+	<li><strong>count number of IDs</strong> - provides the number of captures stored on your scanner.</li>
+</ul>
+
+<hr></div></body></html>

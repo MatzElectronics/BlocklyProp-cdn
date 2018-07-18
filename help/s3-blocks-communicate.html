@@ -1,0 +1,46 @@
+<html><link href="help-style.css" rel="stylesheet" type="text/css" /><body><div class="field-item even" property="content:encoded"><p><strong>COMMUNICATE</strong> blocks allow serial communication between the S3 Robot's Propeller microcontroller and the BlocklyProp terminal window and/or an XBee/WX radio/wifi module if installed in the Scribbler 3 robot. &nbsp;Because the terminal output and radio/wifi&nbsp;module socket are connected, these blocks send and receive from either or&nbsp;both simultaneously.</p>
+
+<hr>
+<h2>send text</h2>
+
+<p><img src="terminal_send_text_b.png" style="height: 34px; width: 228px;"></p>
+
+<p>The <strong>send message</strong> block sends text to an attached serial device, either a USB cable for a terminal, or a wireless module mounted inside the Scribbler robot.</p>
+
+<hr>
+<h2>send number</h2>
+
+<p><img src="terminal_send_number_b.png" style="height: 34px; width: 217px;"></p>
+
+<p>The <strong>send number</strong> block sends a number, in the form of text, to an attached serial device, either a USB cable for a terminal or a wireless module mounted inside the Scribbler robot. The number must be in the valid range of -2,147,483,648 to 2,147,483,647. If a number is outside of the valid range, the result will be indeterminate.</p>
+
+<hr>
+<h2>send character</h2>
+
+<p><img src="terminal_send_char_b.png" style="height: 34px; width: 230px;"></p>
+
+<p>The<strong> send character</strong> block sends a number, in the form of a single character, to an attached serial device, either a USB cable for a terminal or a wireless module mounted inside the Scribbler robot. The number must be in the valid range of 0 to 255. If a number is outside of this range, the block will use the closest valid value.</p>
+
+<hr>
+<h2>send command</h2>
+
+<p><img src="send_command_b.png" style="height: 28px; width: 294px;"></p>
+
+<p>The <strong>send command</strong>&nbsp;block sends a control character, determined by the user, to an attached serial device, either a USB cable for a terminal or a wireless module mounted inside the Scribbler robot.</p>
+
+<hr>
+<h2>receive character</h2>
+
+<p><img src="terminal_receive_char_b.png" style="height: 29px; width: 248px;"></p>
+
+<p>The <strong>receive character</strong> block receives a character, in the form of a number, from an attached serial device, either a USB cable for a terminal or a wireless module mounted inside the Scribbler robot. If the Scribbler robot has received a character, the number will be in the valid range of 0 to 255. If the Scribbler robot has not received any characters, the number will be outside of the valid 0 to 255 range.</p>
+
+<hr>
+<h2>DEPRECATED: set cursor position</h2>
+
+<p><img src="/sites/default/files/content/S3/s3_set_term_crsr.png"></p>
+
+<p><span class="warnbox">This block has been&nbsp;deprecated. &nbsp;It will continue to work in programs that are already using it. &nbsp;It is recommended that you find another means for positioning the cursor in the terminal, such as clearing the screen, using spaces, backspaces, and/or carriage returns.</span></p>
+
+<p>The <strong>set cursor position </strong>block sends control characters that move a terminal cursor to a column and row, determined by the user, to an attached serial device, either a USB cable for a terminal or a wireless module mounted inside the Scribbler robot.</p>
+</div></body></html>

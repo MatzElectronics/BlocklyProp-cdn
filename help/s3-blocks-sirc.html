@@ -1,0 +1,10 @@
+<html><link href="help-style.css" rel="stylesheet" type="text/css" /><body><div class="field-item even" property="content:encoded"><p>BlocklyProp block reference for using a Sony protocol remote and infrared receiver with the S3 robot.</p>
+<p><img src="help-images/image130.png"></p>
+<p>An IR receiver can detect bursts of infrared light sent by a remote controller (like that used for television), and then output a pattern of high/low signals to a Propeller I/O pin.&nbsp;</p>
+<p>Configure your remote for Sony protocol, following its manufacturer instructions. If you purchased the Brightstar brand remote from Parallax (#020-00001), hold the Setup button until the light near it comes on. Enter 6-0-5 and the light should go off. Done!</p>
+<hr>
+<h2>Sony Remote value</h2>
+<p><img src="sony_remote_value_b.png"></p>
+<p>The <strong>Sony Remote value</strong> block returns a value detected by the IR receiver that indicates which button on the remote is pressed. &nbsp;If no button press is&nbsp;detected, then this block provides a value of -1.</p>
+<p>This block's drop-down menu selects the Propeller I/O pin connected to an infrared receiver.&nbsp; When using the S3 board type, the default option is the <em>onboard IR sensor</em> (which is connected to P20).&nbsp; However, the drop-down also gives the option of connecting to P0... P5 on the S3's Hacker Port.</p>
+</div></body></html>

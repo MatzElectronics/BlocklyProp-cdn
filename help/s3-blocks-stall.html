@@ -1,0 +1,33 @@
+<html><link href="help-style.css" rel="stylesheet" type="text/css" /><body><div class="field-item even" property="content:encoded"><p><strong>STALL</strong> blocks monitor the encoders within the Scribbler 3 Robot responsible for detecting tail wheel and drive wheel rotation.</p>
+
+<hr>
+<h2>detect stall</h2>
+
+<p><img src="obstacle_sense_b.png" style="height: 24px; width: 261px;"></p>
+
+<p>The <strong>detect stall</strong> block allows for the detection of stalled drive wheels, a stalled tail wheel, or an overall stall condition ("stuck"). If the specified sensor/system stalls,&nbsp;the <strong>detect stall</strong> block provides a value of true (is) or false (is not).</p>
+
+<ul>
+	<li><em>tail wheel is not spinning:</em>&nbsp;provides a value of true if the tail wheel is stopped (not spinning), and false if it is spinning (should NOT be used on its own to determine if the Scribbler is stuck)</li>
+	<li><em>tail wheel is&nbsp;spinning:</em> provides a value of true if the tail wheel is spinning&nbsp;(not stopped), and false if it is stopped&nbsp;(should NOT be used on its own to determine if the Scribbler is stuck)</li>
+	<li><em>drive wheels are stopped: </em>provides a value of true if the drive wheels are being driven but are not spinning&nbsp;(should NOT be used on its own to determine if the Scribbler is stuck)</li>
+	<li><em>drive wheels are spinning:</em> provides a value of false if the drive wheels are being driven but are not spinning&nbsp;(should NOT be used on its own to determine if the Scribbler is stuck)</li>
+	<li><em>Scribbler is stuck</em>: provides a value of true if the system has determined that it is stuck by monitoring both the drive and tail wheels</li>
+	<li><em>Scribbler is not stuck</em>: provides a value of true is the system has determined that it is not stuck by monitoring both the drive and tail wheels</li>
+</ul>
+
+<hr>
+<h2>DEPRECATED: detect stall (old), tail wheel stall, drive wheel stall</h2>
+
+<p><img src="stall_old.png"></p>
+
+<p>These blocks have been deprecated. &nbsp;They will still work in programs that already have them, but they are not available for new programs. &nbsp;They may also appear orange, signifying that they should be replaced as soon as possible. &nbsp;These blocks were replaced to provide more flexibility by allowing both <em>if</em> and <em>else</em> conditions when combined with the&nbsp;<strong>if...do</strong>&nbsp;block.</p>
+
+<p>The functionality of the <strong>detect stall (old)</strong>&nbsp;block can be recreated using a handful of other blocks. &nbsp;Most users will be able to combine the&nbsp;<strong>if...do</strong>&nbsp;block with the current&nbsp;<strong>detect stall</strong>&nbsp;block:</p>
+
+<p><img alt="" src="stall_if_do.png"></p>
+
+<p>For users who needed the functionality provided by the "was" and "was not" conditions, you can set up two variables to track the current and past values of the stall sensor:</p>
+
+<p><img alt="" src="stall_with_variables.png"></p>
+</div></body></html>

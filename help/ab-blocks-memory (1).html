@@ -1,0 +1,42 @@
+<html><link href="help-style.css" rel="stylesheet" type="text/css" /><body><div class="field-item even" property="content:encoded"><h2>BlocklyProp reference for EEPROM blocks</h2>
+
+<p><img alt="" src="help-images/IconActivityBoard.png" style="float:left; height:17px; margin-left:10px; margin-right:10px; width:19px"><img alt="" src="help-images/IconFlip.png" style="float:left; height:17px; margin-left:10px; margin-right:10px; width:19px"><img alt="" src="help-images/IconQ44.png" style="height:17px; margin-left:10px; margin-right:10px; width:19px">For Propeller Activity Board WX, Propeller FLiP,&nbsp; or Other board types.&nbsp; Not available for Badge or Scribbler Robot board types.</p>
+
+<p>(The Badge board type has a different set of EEPROM blocks designed for a specific interactive application.)</p>
+
+<hr>
+<h2>EEPROM read</h2>
+
+<p><img src="help-images/image110.png"></p>
+
+<p>The <strong>EEPROM read</strong> block reads data&nbsp; from the EEPROM memory on the Propeller Activity Board and saves it in a variable.</p>
+
+<ol>
+	<li>Specify the kind of data to read—number, byte, or string— with the first dropdown.</li>
+	<li>Insert a value block to provide the starting memory address, in the range of 0 to 7675.</li>
+	<li>Choose a variable item to store the data retrieved.</li>
+</ol>
+
+<p>Choose memory addresses carefully. Numbers take up 4 bytes of memory, a byte takes 1 byte of memory, and a string takes up 1 byte for each letter in the string plus 1 byte to indicate the end of the string (“Hello” would take 6 bytes of memory). The range used for address access by this block (0 to 7675) maps to the actual address range 32768 to 40443 in the Propeller Activity Board's upper EEPROM.</p>
+
+<hr>
+<h2>EEPROM write</h2>
+
+<p><img src="help-images/image114.png"></p>
+
+<p>The <strong>EEPROM write </strong>block writes data to the EEPROM memory on the Propeller Activity Board.</p>
+
+<ol>
+	<li>Specify the kind of data—<em>number</em>, <em>byte</em>, or <em>string</em>— with the first dropdown.</li>
+	<li>Insert a value or variable block containing the data to write to EEPROM. Be careful to match the kind of data with the inserted value, to avoid unexpected results:
+		<ul>
+			<li>with <em>number</em>, use any variable, value, number, or operator block that resolves to a number.</li>
+			<li>with <em>byte</em>, use any variable, value, number, or operator block that resolves to a number in the range 0-255. A single character will be stored as its ASCII equivalent.</li>
+			<li>with <em>string</em>, use any variable or value block containing a string.</li>
+		</ul>
+	</li>
+	<li>Provide the starting memory address with a value block, in the range of 0 to 7675.</li>
+</ol>
+
+<p>Choose memory addresses carefully. Numbers take up 4 bytes of memory, a byte takes 1 byte of memory, and a string takes up 1 byte for each letter in the string plus 1 byte to indicate the end of the string (“Hello” would take 6 bytes of memory). The range used for address access by this block (0 to 7675) maps to the actual address range 32768 to 40443 in the Propeller Activity Board's upper EEPROM.</p>
+</div></body></html>

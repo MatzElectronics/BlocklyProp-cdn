@@ -1,0 +1,37 @@
+<html><link href="help-style.css" rel="stylesheet" type="text/css" /><body><div class="field-item even" property="content:encoded"><p><strong>OBSTACLE</strong> blocks monitor the two IR LEDs (emitters) and receiver on the front of the Scribbler 3 Robot.</p>
+
+<p><img alt="" src="/sites/default/files/content/S3/4-0-01.png" style="height:261px; width:503px"></p>
+
+<hr>
+<h2>detect obstacle</h2>
+
+<p><img src="obstacle_detect_b.png" style="height: 24px; width: 234px;"></p>
+
+<p>The <strong>detect obstacle</strong> block has 2 selectable conditions. If the obstacle sensor readings match the block conditions selected by the user, the <strong>detect obstacle</strong> block provides a value of true or false.</p>
+
+<p>The first condition determines whether the block returns true (if the obstacle is detected) or false (if the obstacle is not detected).</p>
+
+<p>The second condition determines what the obstacle sensor readings should be, with the following options:</p>
+
+<ul>
+	<li><em>in front:</em> consider a detection successful if one or more obstacles are in front of both sensors</li>
+	<li><em>to the left:</em> consider a detection successful if one or more obstacles are in front of the left sensor, but no obstacles are in front of the right sensor</li>
+	<li><em>to the right: </em>consider a detection successful if&nbsp;<span style="background-color:rgb(245, 246, 245)">one or more&nbsp;</span>obstacles<span style="background-color:rgb(245, 246, 245)">&nbsp;are in front of the right sensor, but&nbsp;</span>no obstacles are in front of the left sensor</li>
+	<li><em>on either side:</em> consider a detection successful if one or more obstacles are in front of either sensor</li>
+</ul>
+
+<hr>
+<h2>DEPRECATED: detect obstacle (old version)</h2>
+
+<p><img src="obstacle_if_old.png"></p>
+
+<p>This block has been deprecated. &nbsp;It will still work in programs that already contain it, but it is not available in new programs. &nbsp;It may also appear orange, signifying that it should be replaced as soon as possible. &nbsp;This block has been replaced to provide more flexibility by allowing both if and else conditions when combined with the&nbsp;<strong>if...do</strong>&nbsp;block.</p>
+
+<p>The functionality of this block can be recreated using a handful of other blocks. Most users will be able to combine the&nbsp;<strong>if...do</strong>&nbsp;block with the current&nbsp;<strong>detect line</strong>&nbsp;block:</p>
+
+<p><img alt="" src="obstacle_if_do.png"></p>
+
+<p>For users who needed the functionality provided by the "was" and "was not" conditions, you can set up two variables to track the current and past values of the line sensor:</p>
+
+<p><img alt="" src="obstacle_with_variables.png"></p>
+</div></body></html>

@@ -1,0 +1,95 @@
+<html><link href="help-style.css" rel="stylesheet" type="text/css" /><body><div class="field-item even" property="content:encoded"><h2>BlocklyProp reference for <strong>PIN STATES</strong> blocks</h2>
+
+<p><img alt="" src="help-images/IconActivityBoard.png" style="float:left; height:17px; margin-left:10px; margin-right:10px; width:19px"><img alt="" src="help-images/IconFlip.png" style="float:left; height:17px; margin-left:10px; margin-right:10px; width:19px"><img alt="" src="help-images/IconQ44.png" style="height:17px; margin-left:10px; margin-right:10px; width:19px">For Activity Board, FLiP, and Other board types. Not available for Badge or Scribbler Robot board types.&nbsp; I/O pin availability will vary with board type.</p>
+
+<hr>
+<h2>make PIN</h2>
+
+<p><img src="help-images/_pin_set.png" style="height:30px; width:185px"></p>
+
+<p><img alt="" src="help-images/_pin_set_programmable.png" style="height:41px; width:185px"></p>
+
+<p>The <strong>make PIN </strong>block sets the function and state of a Propeller I/O pin.</p>
+
+<p>Select a Propeller I/O pin, 0 to 27*.&nbsp;</p>
+
+<ul>
+	<li>Dropdown variant (top): simply select the desired pin number</li>
+	<li>Programmable variant (bottom): insert a number value block that evaluates to an I/O pin number in the range of 0-27.</li>
+</ul>
+
+<p>Set the function and state with the second dropdown:&nbsp;</p>
+
+<ul>
+	<li><strong>High </strong>sets the pin to output +3.3V.</li>
+	<li><strong>Low </strong>connects the pin as an output to Ground.</li>
+	<li><strong>Toggle </strong>sets the pin to a high output if it was Low or to a Low output if it was High.</li>
+	<li><strong>Input </strong>sets the pin as an input (which allows the Propeller to read the high or low voltage applied to the pin, and block current from going in or coming out of the pin).</li>
+	<li><strong>Reverse </strong>sets the pin to an input if it was an output or sets the pin to an output if it was an input.</li>
+</ul>
+
+<hr>
+<h2>check PIN</h2>
+
+<p><img src="help-images/_pin_check.png" style="height:26px; width:131px"></p>
+
+<p><img alt="" src="help-images/_pin_check_programmable.png" style="height:37px; width:142px"></p>
+
+<p>The <strong>check PIN </strong>block reads an I/O pin as an input.&nbsp; It sets the specified pin to an input and returns a 1 if the pin selected is high and returns a 0 (zero) if the pin is low.</p>
+
+<ul>
+	<li>Dropdown variant (top): simply select the desired pin number</li>
+	<li>Programmable variant (bottom): insert a number value block that evaluates to an I/O pin number in the range of 0-27.</li>
+</ul>
+
+<hr>
+<h2>set multiple pins</h2>
+
+<p><img src="help-images/_set_pin_directions.png" style="height:55px; width:429px"></p>
+
+<p><img alt="" src="help-images/_set_pin_states.png" style="height:55px; width:445px"></p>
+
+<p>The <strong>set multiple pins</strong> sets the state or direction of a continuous group of pins at the same time.&nbsp;</p>
+
+<ol>
+	<li>From the first dropdown, select one of two options:
+		<ul>
+			<li><strong>direction </strong>will allow you to set each pin individually to input (IN) or output (OUT).</li>
+			<li><strong>state </strong>will allow you to set individual ouptput pins to HIGH (+3.3 V) or LOW (0 volts - ground).</li>
+		</ul>
+	</li>
+	<li>From the second and third&nbsp; dropdown menus choose a continuous I/O pin range, lower to higher. The maximum range for the Propeller Activity Board is 0-13.</li>
+	<li>On the second row, a dropdown will appear for all I/O pins in the range; set state or direction independently for each one.</li>
+</ol>
+
+<p><span class="warnbox">You must first set a pin's direction to output (OUT) with one block, before you set its state to HIGH or LOW with another block. Otherwise it won't work!</span></p>
+
+<hr>
+<h2>Binary get pins</h2>
+
+<p><img alt="" src="help-images/binary-get-pins.png"></p>
+
+<p>The<strong> Binary get pins</strong> block reads the input states of a contiguous group of I/O pins. The state of each I/O pin becomes a bit in a binary number, with the highest I/O pin number providing the most significant bit.&nbsp;</p>
+
+<p><span class="warnbox">You must first each pin's direction to input (0) with one block, before you attempt to read the input states with this block. Otherwise it won't work!</span></p>
+
+<hr>
+<h2>Binary set pins</h2>
+
+<p><img alt="" src="help-images/binary-set-pins.png"></p>
+
+<p>The Binary set pins block sets the state or direction of a contiguous group of I/O pins. Each pin in the group is set by the corresponding bit in the attached binary value block.</p>
+
+<ol>
+	<li>In the first dropdown menu, select one of two options:
+		<ul>
+			<li><strong>states </strong>- when states is chosen, a 0 bit sets a pin to output low, and a 1 sets a pin to output high.</li>
+			<li><strong>directions </strong>- when chosen, a 0 bit sets a pin to input, and 1 sets a pin to output.&nbsp;</li>
+		</ul>
+	</li>
+	<li>In the second dropdown, select the highest I/O pin number in a contiguous group of pins, and in the third dropdown, select the lowest I/O pin number. For example, P9 and P6 would make a contiguous group P9, P8, P7, P6.</li>
+	<li>Attach a binary value block, and enter as many binary digits as there are I/O pins in the specified range. The left-most digit will set the highest numbered pin, and the right-most digit will set the lowest numbered pin.&nbsp; Optionally, you may use any block that provides a value, and the pins will be set to the binary equivalent of that value.</li>
+</ol>
+
+<p><span class="warnbox">You must first set a pin's direction to output (1) with one block, before you set its state to HIGH or LOW with another block. Otherwise it won't work!</span></p>
+</div></body></html>

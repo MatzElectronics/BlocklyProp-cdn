@@ -1,0 +1,144 @@
+<html><link href="help-style.css" rel="stylesheet" type="text/css" /><body><div class="field-item even" property="content:encoded"><p>The <strong>MATH</strong> block category contains value blocks, comparison blocks, and mathematical operation blocks.</p>
+
+<hr>
+<h2>number value</h2>
+
+<p><img src="math_number_b.png" style="height: 29px; width: 42px;"></p>
+
+<p>The<strong> number value </strong>block is a value that is usually placed in or attached to other blocks that are expecting a numeric value. You can type any&nbsp;numeric value into the block. Non-integers (fraction or decimal) will be truncated to integer values.</p>
+
+<hr>
+<h2>true/false</h2>
+
+<p><img src="true_false_b.png" style="height: 29px; width: 79px;"></p>
+
+<p>The <strong>true/false</strong> block provides a value of 1 (true) or 0 (false) depending on which is selected.</p>
+
+<hr>
+<h2>random true/false</h2>
+
+<p><img src="random_true_false_b.png" style="height: 28px; width: 159px;"></p>
+
+<p>The <strong>random true/false</strong> block randomly chooses whether to return true (1) or false (0).</p>
+
+<hr>
+<h2>random number</h2>
+
+<p><img src="random_number_b.png" style="height: 41px; width: 319px;"></p>
+
+<p>The <strong>random number&nbsp;</strong>block provides a random number between the first inserted low value and the second inserted high value. The first number must be smaller than the second number. If not in that order, the resulting random value may be unexpected, such as a number outside the range specified.</p>
+
+<hr>
+<h2>math operation</h2>
+
+<p><img src="math_operator_b.png" style="height: 40px; width: 157px;"></p>
+
+<p>The <strong>math operation </strong>block performs a mathematical operation on the two inserted value blocks. Non-integer (fraction or decimal) results will be truncated to an integer. Select one of the following operations from the drop-down menu:</p>
+
+<ul>
+	<li>+ addition</li>
+	<li>- subtraction</li>
+	<li>× multiplication</li>
+	<li>÷ division</li>
+	<li>% modulus (remainder after division)</li>
+	<li>^ (raise to the power of)</li>
+</ul>
+
+<hr>
+<h2>highest/lowest</h2>
+
+<p><img src="highest_lowest_value_b.png" style="height: 40px; width: 233px;"></p>
+
+<p>The <strong>highest/lowest</strong> block, when set to highest, provides the highest of the two values placed in the block, and when set to lowest, provides the lowest of the two values placed in the block.</p>
+
+<hr>
+<h2>boolean comparison</h2>
+
+<p><img src="boolean_operator_b.png" style="height: 41px; width: 145px;"></p>
+
+<p>The <strong>boolean comparison</strong> block performs a boolean comparison between the two inserted values and provides a 1 (true) or 0 (false) depending on which of the following options is selected:</p>
+
+<ul>
+	<li>and</li>
+	<li>or</li>
+	<li>and not</li>
+	<li>or not</li>
+</ul>
+
+<hr>
+<h2>de/increment</h2>
+
+<p><img src="_increment_block_b.png" style="height: 28px; width: 105px;"></p>
+
+<p>The <strong>de/increment </strong>block increases (increment) or decreases (decrement) the variable attached to it by 1.</p>
+
+<hr>
+<h2>not</h2>
+
+<p><img src="math_not_b.png" style="height: 30px; width: 83px;"></p>
+
+<p>The <strong>not </strong>block performs the selected operation on the value attached and provides the result. The options are:</p>
+
+<ul>
+	<li>not: provides the boolean (1/true or 0/false) opposite of the value attached to it. (Any number other than 0 provides a 0/false.)</li>
+	<li>negate: provides the signed value complement; for example, negate 9 provides -9).</li>
+	<li>abs: provides the absolute value; for example, absolute 9 and absolute -9 both provide 9.)</li>
+</ul>
+
+<hr>
+<h2>compare values</h2>
+
+<p><img src="boolean_compare_b.png" style="height: 40px; width: 128px;"></p>
+
+<p>The <strong>compare values</strong> block compares two inserted values and provides a boolean value, 1 if the equation is true, and 0 if it is false. Choose the type of comparison from the dropdown menu:</p>
+
+<ul>
+	<li>= equal to</li>
+	<li>≠ not equal to</li>
+	<li>&lt; less than</li>
+	<li>≤ less than or equal to</li>
+	<li>&gt; greater than</li>
+	<li>≥ greater than or equal to</li>
+</ul>
+
+<hr>
+<h2>constrain value</h2>
+
+<p><img alt="The constrain value block description from the Scribbler 3 BlocklyProp blocks." src="constrain_value_b.png" style="width: 288px; height: 33px;"></p>
+
+<p>The <strong>constrain value</strong> block limits the value of an item to between 0 and 100. Enter the desired minimum (lowest) and maximum (highest) values for an item in the text fields.</p>
+
+<hr>
+<h2>advanced math</h2>
+
+<p><img alt="" src="math_advanced_b.png" style="height: 37px; width: 291px;"></p>
+
+<p>The<strong> advanced math </strong>block performs a trigonometric, exponential, or logarithmic function on the inserted values, and stores the result in a variable. Angles are in integer degrees, not radians. Options are:</p>
+
+<ul>
+	<li>the cosine</li>
+	<li>the sine</li>
+	<li>the tangent</li>
+	<li>the square root</li>
+	<li>e raised to the power</li>
+	<li>the logarithm (base 10)</li>
+	<li>the natural logarithm</li>
+</ul>
+
+<p>Since Blockly is working only with integer math, the block requires you to begin with a multiplier (the first inserted value). Although you could use 1 here, larger numbers make this block more precise.</p>
+
+<hr>
+<h2>inverse trig</h2>
+
+<p><img alt="" src="math_inv_trig_b.png" style="height: 38px; width: 344px;"></p>
+
+<p>The <strong>inverse trig</strong> block performs an inverse trigonometric function. The angles that this block calculates and stores are in integer degrees, not radians. Options are:</p>
+
+<ul>
+	<li>arcsine</li>
+	<li>arccosine</li>
+	<li>arctangent</li>
+</ul>
+
+<p>Because inverse trigonometry operations usually are done on ratios (one number divided by another) this block requires you to input both the numerator and denominator of the ratio.&nbsp; If you need the inverse trig operation of a single number, use 1 as the denominator (the second number).</p>
+</div></body></html>

@@ -1,0 +1,57 @@
+<html><link href="help-style.css" rel="stylesheet" type="text/css" /><body><div class="field-item even" property="content:encoded"><h2>BlocklyProp reference for LSM9DS1 9-AXIS IMU blocks</h2>
+
+<p><img alt="" src="help-images/IconActivityBoard.png" style="float:left; height:17px; margin-left:10px; margin-right:10px; width:19px"><img alt="" src="help-images/IconFlip.png" style="float:left; height:17px; margin-left:10px; margin-right:10px; width:19px"><img alt="" src="help-images/IconQ44.png" style="height:17px; margin-left:10px; margin-right:10px; width:19px">Available for Activity Board, FLiP and Other board types. Not available for Badge or Scribbler Robot board types.</p>
+
+<p>The <a href="http://www.parallax.com/product/28065" target="_blank">LSM9DS1 9-axis IMU (#28065)</a> measures acceleration, rotation, and magnetic field strength along three perpendicular axes, shown and labeled in the image below:</p>
+
+<p><img alt="" src="help-images/IMUaxes.png" style="height:239px; width:357px"></p>
+
+<p>&nbsp;</p>
+
+<hr>
+<h2>IMU initialize</h2>
+
+<p><img alt="" src="help-images/IMU-init-block.png"></p>
+
+<p>The <strong>IMU initialize</strong> block sets up the communication between the Propeller chip and the compass module. If you forget to use this block, a triangle warning icon will appear on other IMU blocks as a reminder: <img alt="" src="help-images/IMU-init-warning.png" style="height:30px; width:45px"></p>
+
+<p>Set each dropdown to match the Propeller I/O pins connected to the IMU's SCL, SDIO, CS_AG, and CS_M pins. &nbsp;It is not necessary to connect the INT_A/G or INT_M pins, however, they may be read using a <strong>check PIN</strong>&nbsp;block if they are connected.&nbsp; I/O pins available will vary by board type.</p>
+
+<p><img alt="" src="help-images/imu-connex.JPG" style="font-size:13.008px"></p>
+
+<p>&nbsp;</p>
+
+<hr>
+<h2>IMU calibrate magnetometer</h2>
+
+<p><img alt="" src="help-images/IMU-calibrate.png"></p>
+
+<p>The <strong>IMU calibrate magnetometer</strong>&nbsp;block is used to calibrate the magnetometer on the IMU&nbsp;module.</p>
+
+<p>Use this block immediately after the&nbsp;<strong>IMU initialize</strong>&nbsp;block. &nbsp;Hold the IMU (or your project that includes the IMU) flat but in a space with enough room to rotate it around. &nbsp;Once the calibration has started, if you are using the ActivityBoard or FLiP,&nbsp;the P26 and P27 LEDs will turn on. &nbsp;You will need to slowly rotate your project around each of the IMU's 3 axes. &nbsp;Once you do, the LEDs will turn off, indicating that the calibration was successful and that the calibration values were saved into the IMU module.&nbsp;</p>
+
+<p>You do not need to repeat the calibration again unless your environment (such as moving your project into or out of a building) or your location changes.</p>
+
+<hr>
+<h2>IMU read</h2>
+
+<p><img alt="" src="help-images/IMU-read.png"></p>
+
+<p>The <strong>IMU read</strong> block stores the current accelerometer, gyroscope, or magnetometer&nbsp;measurements&nbsp;from each of the 3 axes into the specified variables. &nbsp;The Accelerometer measurements are in g-100ths. &nbsp;This means that a measurement of 1 g (1 Earth gravity) of acceleration will read as +100 in one direction or -100 in the opposite direction. &nbsp;Gyroscope measurements are in hundreths of degrees of rotation&nbsp;per second (DPS-100ths). &nbsp;Magnetometer measurements are in gauss-100ths.</p>
+
+<hr>
+<h2>IMU tilt</h2>
+
+<p><img alt="" src="help-images/IMU-tilt.png"></p>
+
+<p>The <strong>IMU tilt</strong>&nbsp;block stores the current tilt angles measured by the IMU's accelerometer, measured in degrees as an integer, ranging from -180 to 180. &nbsp; You must specify the axis that is pointing up/down (vertically)&nbsp;to ensure that your measurements are correct. &nbsp;The tilt of the remaining to axes are then stored in the variables specified by their respective drop-down menus.</p>
+
+<hr>
+<h2>IMU heading</h2>
+
+<p><img alt="" src="help-images/IMU-heading.png"></p>
+
+<p>The <strong>IMU heading</strong> block stores the current unadjusted heading measured by the IMU's magnetometer, in degrees as an integer, ranging from 0 to 359. &nbsp;You must specify which axes are pointed in which directions relative to the observer for the code to correctly resolve the compass heading.</p>
+
+<p><span class="notebox">Calibrate your IMU's magnetometer before using the IMU heading block. &nbsp;You may also need to re-calibrate it if your enviroment or location changes from the last time it was calibrated.</span></p>
+</div></body></html>
