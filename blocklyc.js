@@ -541,14 +541,14 @@ function cloudCompile(text, action, successHandler) {
                 'url':  postUrl,
                 'data': {"code": propcCode}
             }).done(function (data) {
-                console.log(data);
                 data.error = data['compiler-error'];
                 data.message = data['compiler-output'];
+                data.term = terminalNeeded;
                 displayCompilerResults(action, (data.error && data.error !== "" ? false : true), data, successHandler);
             }).fail(function (data) {
                 data.error = data['compiler-error'];
                 data.message = data['compiler-output'];
-                console.log(data);
+                data.term = terminalNeeded;
                 displayCompilerResults(action, false, data, successHandler);
             });    
         } else if (isOffline) {  // Use the webpack version
@@ -562,6 +562,7 @@ function cloudCompile(text, action, successHandler) {
                 */
 
             localCompile(action, {'single.c': propcCode}, 'single.c', '-Os', '-Os', function(data) {
+                data.term = terminalNeeded;
                 displayCompilerResults(action, (data.error && data.error !== "" ? false : true), data, successHandler);
             });
         } else {  // ONLINE MODE
@@ -570,10 +571,10 @@ function cloudCompile(text, action, successHandler) {
                 'url': baseUrl + 'rest/compile/c/' + action + '?id=' + idProject,
                 'data': {"code": propcCode}
             }).done(function (data) {
-                console.log(data);
+                data.term = terminalNeeded;
                 displayCompilerResults(action, (data.error && data.error !== "" ? false : true), data, successHandler);
             }).fail(function (data) {
-                console.log(data);
+                data.term = terminalNeeded;
                 displayCompilerResults(action, false, data, successHandler);
             });
         }
@@ -590,11 +591,11 @@ function cloudCompile(text, action, successHandler) {
 function displayCompilerResults(action, success, data, successHandler) {
     if (success) {
         var loadWaitMsg = (action !== 'compile') ? '\nDownload...' : '';
-        $("#compile-console").val($("#compile-console").val() + data['message'] + loadWaitMsg);
+        $("#compile-console").val($("#compile-console").val() + data.message + loadWaitMsg);
 
         // The success handler will transfer the binary data to the BP client
         if (data.success && data.binary) {
-            successHandler(data, terminalNeeded);
+            successHandler(data);
         }
 
         // Scoll automatically to the bottom after new data is added
@@ -605,7 +606,7 @@ function displayCompilerResults(action, success, data, successHandler) {
         if (typeof data.error === "string") {
             message = data.error;
         } else {
-            (typeof data['message'] === "string") ? data['message'] : (typeof data.error !== "undefined") ? data['message'].toString() : "";
+            (typeof data.message === "string") ? data.message : (typeof data.error !== "undefined") ? data.message.toString() : "";
         }
         $("#compile-console").val($("#compile-console").val() + 
                 ("\n\nBlocklyProp was unable to compile your project:\n" + message +
@@ -619,7 +620,7 @@ function displayCompilerResults(action, success, data, successHandler) {
  * Stub function to the cloudCompile function
  */
 function compile() {
-    cloudCompile('Compile', 'compile', function (data, terminalNeeded) {});
+    cloudCompile('Compile', 'compile');
 }
 
 
@@ -637,7 +638,7 @@ function compile() {
 function loadInto(modal_message, compile_command, load_option, load_action) {
 
     if (ports_available) {
-        cloudCompile(modal_message, compile_command, function (data, terminalNeeded) {
+        cloudCompile(modal_message, compile_command, function (data) {
 
             if (client_use_type === 'ws') {
 
@@ -646,8 +647,8 @@ function loadInto(modal_message, compile_command, load_option, load_action) {
                 launcher_download = false;
                 //Set dbug flag if needed
                 var dbug = 'none';
-                if (terminalNeeded === 'term' || terminalNeeded === 'graph') {
-                    dbug = terminalNeeded;
+                if (data.term === 'term' || data.term === 'graph') {
+                    dbug = data.term;
                 }
                 var prog_to_send = {
                     type: 'load-prop',
@@ -661,7 +662,7 @@ function loadInto(modal_message, compile_command, load_option, load_action) {
                 client_ws_connection.send(JSON.stringify(prog_to_send));
 
             } else {
-
+                console.log('loading...');
                 if (client_version >= minCodedVer) {
                     //Request load with options from BlocklyProp Client
                     $.post(client_url + 'load.action', {option: load_option, action: load_action, binary: data.binary, extension: data.extension, "comport": getComPort()}, function (loaddata) {
@@ -695,9 +696,9 @@ function loadInto(modal_message, compile_command, load_option, load_action) {
                         document.getElementById("compile-console").scrollTop = document.getElementById("compile-console").scrollHeight;
 
                         //console.log(loaddata);
-                        if (terminalNeeded === 'term' && loaddata.success) {
+                        if (data.term === 'term' && loaddata.success) {
                             serial_console();
-                        } else if (terminalNeeded === 'graph' && loaddata.success) {
+                        } else if (data.term === 'graph' && loaddata.success) {
                             graphing_console();
                         }
                     });
@@ -711,9 +712,9 @@ function loadInto(modal_message, compile_command, load_option, load_action) {
                         document.getElementById("compile-console").scrollTop = document.getElementById("compile-console").scrollHeight;
 
                         //console.log(loaddata);
-                        if (terminalNeeded === 'term' && loaddata.success) {
+                        if (data.term === 'term' && loaddata.success) {
                             serial_console();
-                        } else if (terminalNeeded === 'graph' && loaddata.success) {
+                        } else if (data.term === 'graph' && loaddata.success) {
                             graphing_console();
                         }
                     });
