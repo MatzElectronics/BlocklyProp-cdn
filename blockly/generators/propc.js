@@ -34,6 +34,7 @@ var array_contains = function (haystack, needle) {
 
 /**
  * Color Palette - Created by Michel on 30-4-2016.
+ * Modified/Finalized by M. Matz, K. Gracey, J. Jacobs - so we know who to blame :)
  */
 
 var colorPalette = {
@@ -45,12 +46,21 @@ var colorPalette = {
         'functions': 225,
         'variables': 250,
         'math': 275,
-        'binary': 275,
         'robot': 295,
-        'heb': 295,
-        'ab': 320,
+        'system': 320,
         'protocols': 340,
-        'system': 320
+    },
+    defaultColorsHex: {  // Generated from the above values using formulas found on Wikipedia (https://en.wikipedia.org/wiki/HSL_and_HSV)
+        'input': '#26994d',
+        'output': '#26997c',
+        'io': '#268F99',
+        'programming': '#266999',
+        'functions': '#264399',
+        'variables': '#392699',
+        'math': '#692699',
+        'robot': '#8F2699',
+        'system': '#992673',
+        'protocols': '#99264c',
     },
     grayscaleColors: {
         'input': '#AAAAAA',
@@ -60,12 +70,9 @@ var colorPalette = {
         'functions': '#555555',
         'variables': '#666666',
         'math': '#777777',
-        'binary': '#777777',
         'robot': '#888888',
-        'heb': '#888888',
-        'ab': '#999999',
+        'system': '#999999',
         'protocols': '#111111',
-        'system': '#999999'
     },
     activePalette: null,
     getColor: function (type) {
@@ -77,16 +84,12 @@ var colorPalette = {
 
 };
 
-if (document.referrer.indexOf('?') === -1) {
-    colorPalette.activePalette = colorPalette.defaultColors;
-} else {
-    if (document.referrer.split('?')[1].indexOf('grayscale=1') === -1) {
-        colorPalette.activePalette = colorPalette.defaultColors;
-    } else {
-        colorPalette.activePalette = colorPalette.grayscaleColors;
-    }
-}
+// Set the default color palette
+colorPalette.activePalette = colorPalette.defaultColorsHex;
 
+if (getURLParameter('greyscale') || getURLParameter('grayscale')) {
+    colorPalette.activePalette = colorPalette.grayscaleColors;
+}
 
 
 Blockly.propc = new Blockly.Generator('propc');
